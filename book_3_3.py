@@ -8,3 +8,5 @@ for i in range(N):
     min_list.append(min(sub_list))      # 입력 받은 list중 가장 작은 값
 
 print(max(min_list)) #가장 작은 값들 중 제일 큰 값
+
+# 그리디 방식으로 다시풀기.
