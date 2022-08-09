@@ -1,4 +1,5 @@
 N = int(input())
+value = int(input())
 
 #얕은 복사로 문제 해결법 list comprehension
 dalpangE = [[0 for _ in range(N)] for _ in range(N)]
@@ -21,9 +22,10 @@ def turn(d):
 
 #배열 채워넣기
 while number > 0:  
-    #nr, nc 임시로 위치 저장/ 저장여부는 마지막에 판단
+    # 배열인덱스를 임시저장, 최종저장 여부는 마지막에 확인
     nr = r + dr[d]
     nc = c + dc[d]
+    #이전에 저장한 값을 출력
     dalpangE[r][c] = number
     number -= 1
     #정해진 배열값을 벗어날 경우 회전
@@ -36,13 +38,17 @@ while number > 0:
         d = turn(d)
         r, c = r + dr[d] , c + dc[d]
         continue
-    #정상적일 때 r,c 인덱스 저장해서 값 넣기
+    #최종 저장
     r, c = nr, nc
-
-#원하는 모양으로 출력
+    
+# 원하는 값으로 출력
 for i in dalpangE:
     for j in i:
         print(j, end=' ')
     print()
-    
 
+#입력한 값 배열 인덱스 찾기
+for x in range(N):
+    for y in range(N):
+        if dalpangE[x][y] == value:
+            print(x+1, y+1)
