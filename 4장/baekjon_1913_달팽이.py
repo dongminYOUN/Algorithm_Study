@@ -28,16 +28,12 @@ while number > 0:
     #이전에 저장한 값을 출력
     dalpangE[r][c] = number
     number -= 1
-    #정해진 배열값을 벗어날 경우 회전
-    if nr >= N or nr < 0 or nc >= N or nc < 0:
+    #정해진 배열값을 벗어날 경우 회전, 배열이 0이 아니라 채워져 있는 경우 회전
+    if nr >= N or nr < 0 or nc >= N or nc < 0 or dalpangE[nr][nc] != 0:
         d = turn(d)
         r, c = r + dr[d] , c + dc[d]
         continue
-    #배열이 0이 아니라 채워져 있는 경우 회전
-    elif dalpangE[nr][nc] != 0:
-        d = turn(d)
-        r, c = r + dr[d] , c + dc[d]
-        continue
+
     #최종 저장
     r, c = nr, nc
     
