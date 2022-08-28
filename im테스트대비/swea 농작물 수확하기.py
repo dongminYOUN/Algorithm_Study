@@ -15,3 +15,4 @@ for tc in range(TC):
     print(f'#{tc+1} {ans}')
 
 
+

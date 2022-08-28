@@ -4,23 +4,23 @@ for tc in range(TC):
     li = input().split()
     div1 = []
     div2 = []
-    if N % 2 == 0:              # 짝수
+    if N % 2 == 0:
         for i in range(N):
             if i < N//2:
                 div1.append(li[i])
             else:
                 div2.append(li[i])
-    else:                       # 홀수
+    else:
         for i in range(N):
             if i <= N//2:
                 div1.append(li[i])
             else:
                 div2.append(li[i])
 
-    shuffle = []
+    shuffle = [] # a d / b e / c f
     for i in range(N//2):
-        shuffle.append(div1[i])
-        shuffle.append(div2[i])
+        shuffle.append(div1[i])   # 1 2 3
+        shuffle.append(div2[i])   # 4 5
     if N % 2 == 1:
         shuffle.append(div1[N//2])
 

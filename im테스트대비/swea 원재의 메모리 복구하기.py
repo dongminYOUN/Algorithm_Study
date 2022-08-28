@@ -1,3 +1,5 @@
+#import sys; sys.stdin = open('input.txt')
+
 TC = int(input())
 for tc in range(TC):
     # 제일 왼쪽 부터 값을 넣어 원하는 값이 맞는지 체크
